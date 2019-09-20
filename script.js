@@ -1,2 +1,2 @@
-const button = document.getElementById("enter");
-const input = document.getElementById("usrinput");
+const button = document.querySelector("enter");
+const button = document.querySelector("usrinput");
