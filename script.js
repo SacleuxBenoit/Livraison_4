@@ -14,3 +14,12 @@ function addTextNode(){
 function resetInput(){
     input.value ="";
 }
+function inserLi(){
+    ul.insertAdjacentElement("beforeend","li");
+}
+
+function createListElement(){
+    function addTextNode();
+    function resetInput();
+    function inserLi();
+}
