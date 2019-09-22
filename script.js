@@ -1,25 +1,41 @@
-const button = document.getElementById("enter");
-const button = document.getElementById("usrinput");
-const ul = document.querySelector("ul");
-const li = document.createElement("li");
+`use strict`;
 
-function inputlength(){
-    return input.value.length;
-}
+const button = document.getElementById('enter');
+const input = document.getElementById('usrinput');
+const ul = document.querySelector('ul');
+let li;
 
-function addTextNode(){
-    li.insertAdjacentText("beforeend", document.createTextNode(input,value));
-}
 
-function resetInput(){
-    input.value ="";
-}
-function inserLi(){
-    ul.insertAdjacentElement("beforeend","li");
+function CreateTextNodeLi() {
+    li = document.createElement('li');
 }
 
-function createListElement(){
-    function addTextNode();
-    function resetInput();
-    function inserLi();
+function CreateElementLi() {
+    li.append(document.createTextNode(input.value));
 }
+
+function InsertLi() {
+    ul.insertAdjacentElement('beforeend', li);
+}
+
+function addLiEnter(Enter) {
+    if ( input.value.length > 0 && (Enter.keyCode === 13) ) {
+        functionGeneral();
+    }
+}
+
+function addLiClick() {
+    if ( input.value.length > 0 ){
+        functionGeneral();
+    }
+}
+
+function functionGeneral() {
+    CreateTextNodeLi();
+    CreateElementLi();
+    InsertLi();
+    input.value = "";
+}
+
+button.addEventListener("click", addLiClick);
+input.addEventListener("keypress", addLiEnter);
